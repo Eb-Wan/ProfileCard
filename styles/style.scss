@@ -1,0 +1,92 @@
+$MainBackGround: #2b2a5d;
+$Border: #FFFFFF40;
+$TextColor: #fefeff;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $TextColor;
+    height: 100vh;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    background-color: $MainBackGround;
+    animation: slidetoleft 2s ease-out;
+    &__img {
+        width: 80%;
+        border-radius: 50%;
+        border: $Border 2px solid;
+    }
+    &__h1 {
+        text-align: center;
+    }
+    &__quote {
+        font-weight: bold;
+        text-align: center;
+    }
+    &__description{
+        font-size: 14px;
+        text-align: justify;
+        font-family: sans-serif;
+    }
+    &__containerbtn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+    }
+    &__btn{
+        position: relative;
+        width: 120px;
+        padding: 15px;
+        font-size: 16px;
+        font-family: sans-serif;
+        background-color: $TextColor;
+        color: $MainBackGround;
+        border-radius: 10px;
+    }
+    &__btn:hover{
+        transition: 1s ease-in-out;
+        width: 130px;
+    }
+    &__btn::after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        background-color: $MainBackGround;
+        width: 0%;
+        height: 2px;
+    }
+    &__btn::before{
+        content: "";
+        position: absolute;
+        right: 50%;
+        bottom: 5px;
+        background-color: $MainBackGround;
+        width: 0%;
+        height: 2px;
+    }
+    &__btn:hover::before{
+        width: 30%;
+        transition: 1s ease-in-out;
+    }
+    &__btn:hover::after{
+        width: 30%;
+        transition: 1s ease-in-out;
+    }
+   
+}
+
+@keyframes slidetoleft {
+    from {transform: translateX(50vw);}
+    to {transform: translateX(0);}
+}
